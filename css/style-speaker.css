@@ -1,0 +1,22 @@
+.post > .entry-header {
+	height: auto;
+	padding-top: 1em; }
+.post .entry-title, .post h4 {
+	text-shadow: none; 
+	color: black;
+	word-break: break-word;
+	margin-left: 1em;
+	margin-right: 1em;
+	box-sizing: border-box;
+}
+.post > .entry-header::after {
+	content: none; }
+.profiles {
+	padding-top: 2em;
+}
+.prf-wrap .diag-clip::after {
+	background-color: black;
+	top: -1em;
+	left: -1em;
+	padding: 1em;
+}
