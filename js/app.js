@@ -5,7 +5,7 @@ function cnInit(){
 		var size = jQuery(this).data("cnsize");
 		var spacing = jQuery(this).data("cnspace");
 		var offset = jQuery(this).data("cnoffset");
-		
+
 		jQuery(this).children("ul").each(function (){
 			var width = jQuery(this).children().length;
 			var angle = size/width-spacing+((360-spacing)>size?(spacing/width):0);
@@ -24,7 +24,7 @@ function cnToggle(a){
 		transitioning = true;
 		var theSlider = jQuery(a).parent();
 		var tparent = theSlider.parent();
-		
+
 		var yeah = tparent.hasClass('collapse');
 
 		if (yeah) tparent.removeClass('collapse');
@@ -34,7 +34,7 @@ function cnToggle(a){
 			jQuery(this).delay(100*index).queue(function(){
 	    		if (!yeah) jQuery(this).removeClass('open').dequeue();
 	    		else jQuery(this).addClass('open').dequeue();
-	    		
+
 	    		if (index+1==g.length) {
 	    			transitioning = false;
 	    			if (!yeah) tparent.addClass('collapse').dequeue();
@@ -51,14 +51,15 @@ function cnToggle(a){
 function tsDetermine() {
 	jQuery('#tsBox').each(function() {
 		var theSlider = jQuery(this).children('div.headline-slider');
-		if (theSlider.children('ul.slides').get(0).scrollWidth <= theSlider.innerWidth()){
+		var theChildren = theSlider.children('ul.slides');
+		if (theChildren.length > 0 && theChildren.get(0).scrollWidth <= theSlider.innerWidth()){
 			jQuery(this).addClass('noscroll');
 		} else {
 			jQuery(this).removeClass('noscroll');
 		}
 	});
-	
-	
+
+
 }
 function tsInit() {
 	if (jQuery('#tsBox').data('tsscatch')) jQuery(window).scroll(function () {
@@ -69,7 +70,7 @@ function tsInit() {
 	jQuery(window).resize(function () {
 		tsDetermine();
 	});
-	
+
 }
 function tsScrollLeft(a) {
 	var scrollable = jQuery(a).parent().children('ul.slides');
@@ -92,7 +93,7 @@ function tsScrollRight(a) {
 		multSlow = 3;
 	}
 	scrollable.animate({scrollLeft: nextScroll}, scrollable.parent().data('tssspeed')*multSlow);
-	
+
 }
 
 // function.js
@@ -105,10 +106,10 @@ function closeMe(x) {
 }
 
 jQuery(document).ready(function($) {
-	
+
 	function fillImages(){
 		jQuery("img.fill").each(function() {
-			
+
 			var parent = jQuery(this).parent();
 			var pratio = parent.innerWidth()/parent.innerHeight();
 			var mratio = jQuery(this).width()/jQuery(this).height();

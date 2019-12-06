@@ -58,7 +58,7 @@ $csc = get_template_directory_uri();
 					<p>
 						<?php _e( 'Nothing to show you.' );?>
 					</p>
-			<?php 
+			<?php
 				endif; ?>
 		</section>
 		<?php if (get_theme_mod('display_alert_enable', 'checked')=='checked') : ?>

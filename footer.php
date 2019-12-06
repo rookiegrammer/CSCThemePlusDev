@@ -18,18 +18,11 @@
 			<p class="credits">&copy; UPB Cordillera Studies <?php echo date('Y'); ?>. All rights reserved.
 			</p>
 		</footer>
-
-		<style type="text/css">
-			.nav-wrap {
-				width: 350px;
-				height: 175px;
-			}
-		</style>
 		<script type="text/javascript">
-<?php 			
+<?php
 				if ( !is_home() ) : ?>
-				jQuery('#cscbottom').css('padding-bottom', jQuery('.navcenter').height()/2+'px'); 
-<?php 			
+				jQuery('#cscbottom').css('padding-bottom', jQuery('.nav-wrap').height()+'px');
+<?php
 				endif; ?>
 		</script>
 		<?php wp_footer(); ?>

@@ -11,6 +11,12 @@ function gccph__register_required_plugins() {
 		),
 
 		array(
+			'name'      => 'ACF Photo Gallery Field',
+			'slug'      => 'navz-photo-gallery',
+			'required'  => true,
+		),
+
+		array(
 			'name'        => 'WordPress SEO by Yoast',
 			'slug'        => 'wordpress-seo',
 			'is_callable' => 'wpseo_init',

@@ -9,7 +9,7 @@
 		    src:url('<?= get_template_directory_uri() ?>/fonts/Selima.ttf.woff') format('woff'),
 		        url('<?= get_template_directory_uri() ?>/fonts/Selima.ttf.svg#Selima') format('svg'),
 		        url('<?= get_template_directory_uri() ?>/fonts/Selima.ttf.eot'),
-		        url('<?= get_template_directory_uri() ?>/fonts/Selima.ttf.eot?#iefix') format('embedded-opentype'); 
+		        url('<?= get_template_directory_uri() ?>/fonts/Selima.ttf.eot?#iefix') format('embedded-opentype');
 		    font-weight: normal;
 		    font-style: normal;
 		}
@@ -63,7 +63,7 @@
 			.profiles h4 {
 				margin-top: <?=get_theme_mod('display_speaker_thumb_size', '80')*0.21+get_theme_mod('display_font_size', '16')*get_theme_mod('display_speaker_scale_size', '1.0')*2?>px;
 			}
-<?php	
+<?php
 		endif ?>
 
 <?php
@@ -76,16 +76,16 @@
 			@media print, screen and (min-width: 40em) {
 	  			.site-title {
 	    			font-size: <?=get_theme_mod('display_banner_desktop_size', '3.0')?>em; } }
-<?php 		
+<?php
 		endif ?>
 <?php
 		if (get_theme_mod('display_speaker_border_enable', 'checked')!='checked') : ?>
 			.profiles .diag-clip::after {
 			    content: none }
-			
-<?php 		
+
+<?php
 		endif ?>
-<?php 
+<?php
 		if ( is_home() ) : ?>
 			#masthead {
 				background-image: url(<?= get_theme_mod('display_image', get_template_directory_uri().'/img/hero.jpg'); ?>); }
@@ -110,21 +110,19 @@
 
 				</div>
 			</a>
-			<nav id="cscmenu" class="nav-wrap collapse <?php if (!is_home()) echo "overlap"; ?>">
-				<div class="circnav" data-cnsize="180" data-cnspace="-0.2" data-cnoffset="0">
-<?php
-						$walker = new Menu_With_Link_Classes;
+			<nav id="cscmenu" class="nav-wrap <?php if (!is_home()) echo "overlap"; ?>">
+				<?php
+										$walker = new Menu_With_Link_Classes;
 
-						$defaults = array(
-							'container' => false,
-							'theme_location' => 'primary-menu',
-							'depth' => 1,
-							'fallback_cb' => '__return_false',
-							'walker' => $walker
-						);
-						wp_nav_menu( $defaults ); ?>
-					<div class="navcenter" onclick="cnToggle(this)">Menu</div>
-				</div>
+										$defaults = array(
+											'container' => false,
+											'menu_class' => 'nav-menu',
+											'theme_location' => 'primary-menu',
+											'depth' => 1,
+											'fallback_cb' => '__return_false',
+											'walker' => $walker
+										);
+										wp_nav_menu( $defaults ); ?>
 			</nav>
 		</header>
 		<script type="text/javascript">

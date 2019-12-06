@@ -14,12 +14,12 @@
 									$image_id = get_post_thumbnail_id();
 									$image_url_array = wp_get_attachment_image_src($image_id, false); ?>
 									background-image: url(<?= $image_url_array[0]; ?>);
-							<?php 
+							<?php
 								else: ?>
 									height: auto;
 									padding-top: 1em; }
 								.post .entry-title, .post .entry-date {
-									text-shadow: none; 
+									text-shadow: none;
 									color: black }
 								.post > .entry-header::after {
 									content: none;
@@ -35,7 +35,7 @@
 			<?php
 				endwhile;
 				endif; ?>
-			
+
 		</main>
 		<section id="tsBox" class="mini" data-tsscatch="false" style="padding-top: 2em;">
 			<div class="headline-slider" data-tsswidth="100" data-tssspeed="200" data-tssjump="2">

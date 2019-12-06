@@ -18,7 +18,7 @@ function cptui_register_my_cpts() {
         "public" => true,
         "publicly_queryable" => true,
         "show_ui" => true,
-        "show_in_rest" => false,
+        "show_in_rest" => true,
         "rest_base" => "",
         "has_archive" => false,
         "show_in_menu" => true,
@@ -47,7 +47,7 @@ function cptui_register_my_cpts() {
         "labels" => $labels,
         "description" => "",
         "public" => true,
-        "publicly_queryable" => true,
+        "publicly_queryable" => false,
         "show_ui" => true,
         "show_in_rest" => false,
         "rest_base" => "",
@@ -63,11 +63,43 @@ function cptui_register_my_cpts() {
     );
 
     register_post_type( "feature", $args );
+
+
+    /**
+     * Post Type: Speakers.
+     */
+
+    $labels = array(
+        "name" => __( 'Past Conferences', '' ),
+        "singular_name" => __( 'Conference', '' ),
+    );
+
+    $args = array(
+        "label" => __( 'Conferences', '' ),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array( "slug" => "past-conferences", "with_front" => true ),
+        "query_var" => true,
+        "supports" => array( "title", "editor", "thumbnail" ),
+    );
+
+    register_post_type( "past-conferences", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
-
-define( 'ACF_LITE', true );
+//
+// define( 'ACF_LITE', true );
 
 if(function_exists("register_field_group"))
 {

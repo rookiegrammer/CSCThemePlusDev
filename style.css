@@ -7,7 +7,7 @@ Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, white, light, blocks, flexible-width, fluid-layout, responsive-layout, custom-menu, featured-images
- 
+
 Designed with the goal of great content presentation.
 */
 /*Font Style*/
@@ -1148,163 +1148,65 @@ Footer Styling
 /*************************************************
 Element Specific Styling
 **************************************************/
-.nav-wrap {
-  width: 25em;
-  height: 12.5em;
-  overflow: hidden; }
-
-.nav-wrap.collapse {
-  visibility: hidden; }
-
-.nav-wrap.collapse .navcenter {
-  visibility: visible; }
-
-.circnav {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  width: 100%;
-  height: 200%;
-  -webkit-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
-  font-size: 0.9em; }
-
-.circnav:hover, .circnav:focus {
-  opacity: 1; }
-
-.circnav .navcenter {
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-  text-decoration: none;
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  left: 50%;
-  top: 50%;
-  margin-left: -20%;
-  margin-top: -20%;
-  background-color: white;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 0.5em;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 3em;
-  font-family: "Selima", sans-serif;
-  font-size: 35px;
-  text-transform: capitalize;
-  font-weight: bold;
-  color: #2b2b2b; }
-
-.circnav .navcenter:hover, .circnav .navcenter:focus {
-  color: #de3246; }
-
-.circnav > ul {
-  position: absolute;
-  display: block;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.circnav > ul li {
-  position: absolute;
-  display: block;
-  width: 50%;
-  height: 50%;
-  -webkit-transform-origin: 100% 100%;
-  -ms-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-  color: black;
-  text-align: center;
-  overflow: hidden; }
-
-.circnav > ul li > a {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #2b2b2b;
-  position: absolute;
-  text-align: center;
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-  border: solid 3px white;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
-  overflow: hidden;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  padding-top: 1em;
-  font-weight: lighter; }
-
-.circnav > ul li > a:focus, .circnav > ul li > a:active {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #2b2b2b;
-  position: absolute;
-  text-align: center;
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-  border: solid 3px white;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
-  overflow: hidden;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  padding-top: 1em;
-  font-weight: lighter; }
-
-.circnav > ul li > a::before {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  font-size: 2.2em;
-  top: 1.2em;
-  font-family: FontAwesome; }
-
-.circnav > ul li > a.open {
-  bottom: -95%;
-  right: -95%;
-  width: 190%;
-  height: 190%; }
-
-.circnav ul li:nth-child(2n) > a {
-  background-color: rgba(255, 255, 255, 0.9); }
-
-.circnav ul li > a:hover, .circnav ul li a:focus {
-  bottom: -100%;
-  right: -100%;
-  width: 200%;
-  height: 200%;
-  color: #de3246;
-  border-color: #de3246;
-  background-color: white;
-  font-weight: bold; }
-
 body {
   margin: 0; }
+
+.nav-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%; }
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  overflow-y: auto;
+  max-width: 100%;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  line-height: inherit; }
+
+.nav-item {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  margin: 0 3px; }
+  .nav-item .nav-link {
+    color: #444;
+    text-align: center;
+    -webkit-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s; }
+  .nav-item .nav-title {
+    background: #fff;
+    padding: 5px 1rem;
+    font-weight: bold;
+    border-top: solid 3px #de3246; }
+  .nav-item .nav-collapse {
+    font-size: 30px;
+    height: 0;
+    -webkit-transition: height 0.2s;
+    -o-transition: height 0.2s;
+    transition: height 0.2s;
+    overflow-y: hidden; }
+  .nav-item:hover .nav-link {
+    color: #de3246; }
+  .nav-item:hover .nav-collapse {
+    height: 50px; }
 
 #tsBox {
   width: 90%;
@@ -1530,9 +1432,6 @@ body {
 @media (max-width: 650px) {
   .headline-slider > ul > li {
     width: 50%; }
-  .nav-wrap {
-    width: 300px;
-    height: 150px; }
   .profiles li {
     width: 100%; }
   .profiles li .prf-wrap::after {
