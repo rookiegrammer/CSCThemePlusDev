@@ -1011,7 +1011,7 @@ Posts Styling
 .entry-content a:not(.button):hover, .entry-content a:not(.button):focus {
   color: inherit; }
 
-.entry-content img {
+.entry-content img:not(.no-style) {
   border-radius: 5px;
   max-width: 100%;
   -webkit-box-sizing: border-box;
@@ -1451,3 +1451,29 @@ body {
   height: 100%;
   width: 100%;
   opacity: 1; }
+
+.event-grid {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: height 0.4s, opacity 0.2s;
+  -o-transition: height 0.4s, opacity 0.2s;
+  transition: height 0.4s, opacity 0.2s; }
+  .event-grid-loading {
+    text-align: center; }
+  .event-grid .event-grid-item {
+    padding: 5px;
+    width: 20%; }
+    @media (max-width: 1200px) {
+      .event-grid .event-grid-item {
+        width: 25%; } }
+    @media (max-width: 800px) {
+      .event-grid .event-grid-item {
+        width: 50%; } }
+    @media (max-width: 400px) {
+      .event-grid .event-grid-item {
+        width: 100%; } }
+    .event-grid .event-grid-item img {
+      width: 100%;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
