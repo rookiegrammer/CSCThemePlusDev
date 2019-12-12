@@ -23,6 +23,19 @@ function gccph__register_required_plugins() {
 		),
 
 		array(
+			'name'        => 'Contact Form 7',
+			'slug'        => 'contact-form-7',
+			'is_callable' => 'wpcf7_contact_form',
+			'required'  => true
+		),
+
+		array(
+			'name'        => 'Flamingo',
+			'slug'        => 'flamingo',
+			'is_callable' => 'flamingo_plugin_url',
+		),
+
+		array(
       'name' => 'Safe SVG', // The plugin name.
       'slug' => 'safe-svg', // The plugin slug (typically the folder name).
 			'is_callable' => 'safe_svg::allow_svg'

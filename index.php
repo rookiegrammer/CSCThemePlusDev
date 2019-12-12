@@ -1,6 +1,29 @@
 <?php get_header();
 $csc = get_template_directory_uri();
 ?>
+		<section class="countdown" style="margin: 2rem 0 1rem">
+			<div id="clockdiv">
+				<div class="h3" style="display: block">
+					Conference Countdown
+				</div>
+			  <div>
+			    <span class="days"></span>
+			    <div class="smalltext">Days</div>
+			  </div>
+			  <div>
+			    <span class="hours"></span>
+			    <div class="smalltext">Hours</div>
+			  </div>
+			  <div>
+			    <span class="minutes"></span>
+			    <div class="smalltext">Minutes</div>
+			  </div>
+			  <div>
+			    <span class="seconds"></span>
+			    <div class="smalltext">Seconds</div>
+			  </div>
+			</div>
+		</section>
 		<section id="tsBox" class="mini" data-tsscatch="false">
 			<div class="headline-slider" data-tssspeed="200" data-tssjump="2">
 				<div class="tslider tsLeft" onclick="tsScrollLeft(this)">
@@ -68,4 +91,12 @@ $csc = get_template_directory_uri();
 			<a class="button csc bordered white tpadding" href="<?= get_theme_mod('display_alert_link', '#') ?>"><?= get_theme_mod('display_alert_link_text', 'Send') ?></a>
 		</aside>
 		<?php endif; ?>
+		<script>
+		jQuery(document).ready(function () {
+			var deadline = new Date( Date.parse('<?= get_theme_mod(start_date, '2017-07-16T12:00') ?>') );
+			if (deadline) {
+				initializeClock('clockdiv', deadline);
+			}
+		});
+		</script>
 <?php get_footer(); ?>

@@ -220,7 +220,7 @@ function csc_customize_register( $wp_customize ){
 				)
 			);
 
-		
+
 	$priority += 10;
 
 	$section = 'csc_mod_confdetails_section'; $section_label = 'Conference Details';
@@ -241,7 +241,7 @@ function csc_customize_register( $wp_customize ){
 				)
 			);
 
-		$id = 'display_date'; $label = 'Date';
+		$id = 'display_date'; $label = 'Displayed Date';
 		$wp_customize->add_setting( $id, array(
 				'default'			=>	'July 16-17, 2017',
 				'transport'			=>	'refresh'
@@ -250,6 +250,19 @@ function csc_customize_register( $wp_customize ){
 				'type'		=>	'text',
 				'section'	=>	$section,
 				'label'		=>	$label
+				)
+			);
+
+		$id = 'start_date'; $label = 'Start Date';
+		$wp_customize->add_setting( $id, array(
+				'default'			=>	'2017-07-16T12:00',
+				'transport'			=>	'refresh'
+			));
+		$wp_customize->add_control( $id, array(
+				'type'		=>	'text',
+				'section'	=>	$section,
+				'label'		=>	$label,
+				'description' => 'Date in format YYYY-MM-DD\'T\'HH:MM'
 				)
 			);
 

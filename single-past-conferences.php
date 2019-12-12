@@ -35,7 +35,7 @@ wp_enqueue_style('mfp-lightbox-css', 'https://cdnjs.cloudflare.com/ajax/libs/lig
         <?php edit_post_link( 'Edit info', '<div>', '<a href="'.get_bloginfo('url').'" class="button bordered">Return Front Page</a></div>', '', 'button bordered' ) ?>
       </div>
       <div class="entry-gallery" style="padding: 0 12% 4em 12%; box-sizing: border-box">
-        <?php $images = acf_photo_gallery('gallery', get_the_ID() );
+        <?php $images = is_callable('acf_photo_gallery') ? acf_photo_gallery('gallery', get_the_ID() ) : array();
           if ( count($images) ) : ?>
         <h2 class="text-center" style="padding: 2em 0 0.5em; font-weight: normal">Conference Gallery</h1>
         <div class="event-grid-loading"><span class="secondary label" style="font-weight: bold">Loading...</span></div>

@@ -49,7 +49,7 @@ function cptui_register_my_cpts() {
         "public" => true,
         "publicly_queryable" => false,
         "show_ui" => true,
-        "show_in_rest" => false,
+        "show_in_rest" => true,
         "rest_base" => "",
         "has_archive" => false,
         "show_in_menu" => true,
@@ -99,11 +99,11 @@ function cptui_register_my_cpts() {
 
 add_action( 'init', 'cptui_register_my_cpts' );
 //
-// define( 'ACF_LITE', true );
+define( 'ACF_LITE', true );
 
-if(function_exists("register_field_group"))
+if(function_exists("acf_add_local_field_group"))
 {
-    register_field_group(array (
+    acf_add_local_field_group(array (
         'id' => 'acf_feature',
         'title' => 'Feature',
         'fields' => array (
@@ -186,7 +186,7 @@ if(function_exists("register_field_group"))
         ),
         'menu_order' => 0,
     ));
-    register_field_group(array (
+    acf_add_local_field_group(array (
         'id' => 'acf_speaker',
         'title' => 'Speaker',
         'fields' => array (
@@ -230,6 +230,47 @@ if(function_exists("register_field_group"))
             ),
         ),
         'menu_order' => 0,
+    ));
+    acf_add_local_field_group(array(
+    	'key' => 'group_5de7203e6801e',
+    	'title' => 'Gallery',
+    	'fields' => array(
+    		array(
+    			'key' => 'field_5de72041c860a',
+    			'label' => 'Images',
+    			'name' => 'gallery',
+    			'type' => 'photo_gallery',
+    			'instructions' => 'Add photos from this conference.',
+    			'required' => 0,
+    			'conditional_logic' => 0,
+    			'wrapper' => array(
+    				'width' => '',
+    				'class' => '',
+    				'id' => '',
+    			),
+    			'fields[' => array(
+    				'edit_modal' => 'Default',
+    			),
+    			'edit_modal' => 'Default',
+    		),
+    	),
+    	'location' => array(
+    		array(
+    			array(
+    				'param' => 'post_type',
+    				'operator' => '==',
+    				'value' => 'past-conferences',
+    			),
+    		),
+    	),
+    	'menu_order' => 0,
+    	'position' => 'normal',
+    	'style' => 'seamless',
+    	'label_placement' => 'top',
+    	'instruction_placement' => 'label',
+    	'hide_on_screen' => '',
+    	'active' => true,
+    	'description' => '',
     ));
 }
 

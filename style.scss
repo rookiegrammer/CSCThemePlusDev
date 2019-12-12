@@ -1295,3 +1295,32 @@ body {
     }
   }
 }
+
+#clockdiv {
+  width: 100%;
+  font-family: sans-serif;
+  color: #de3246;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+
+  > div {
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  div > span {
+    padding: 15px;
+    border-radius: 3px;
+    background: #de3246;
+    display: inline-block;
+    color: #fff;
+  }
+
+  .smalltext {
+    padding-top: 5px;
+    font-size: 16px;
+  }
+}
