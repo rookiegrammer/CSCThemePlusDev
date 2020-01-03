@@ -84,16 +84,16 @@ $csc = get_template_directory_uri();
 			<?php
 				endif; ?>
 		</section>
-		<?php if (get_theme_mod('display_alert_enable', 'checked')=='checked') : ?>
+		<?php if (csc_get_mod('display_alert_enable', 'checked')=='checked') : ?>
 		<aside class="alert-bar">
 			<a class="fa fa-close" href="#" onclick="closeMe(this)"></a>
-			<?= get_theme_mod('display_alert_text', 'Papers are still accepted! Send one?') ?>
-			<a class="button csc bordered white tpadding" href="<?= get_theme_mod('display_alert_link', '#') ?>"><?= get_theme_mod('display_alert_link_text', 'Send') ?></a>
+			<?= csc_get_mod('display_alert_text', 'Papers are still accepted! Send one?') ?>
+			<a class="button csc bordered white tpadding" href="<?= csc_get_mod('display_alert_link', '#') ?>"><?= csc_get_mod('display_alert_link_text', 'Send') ?></a>
 		</aside>
 		<?php endif; ?>
 		<script>
 		jQuery(document).ready(function () {
-			var deadline = new Date( Date.parse('<?= get_theme_mod(start_date, '2017-07-16T12:00') ?>') );
+			var deadline = new Date( Date.parse('<?= csc_get_mod('start_date', '2017-07-16T12:00') ?>') );
 			if (deadline) {
 				initializeClock('clockdiv', deadline);
 			}

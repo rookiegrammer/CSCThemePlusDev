@@ -12,8 +12,8 @@
 		</div>
 		<footer id="cscbottom">
 			<ul class="strip social">
-				<?php if (get_theme_mod('social_facebook')) : ?><li class="inline-block"><a class="fa fa-facebook" href="<?= get_theme_mod('social_facebook') ?>"></a></li><?php endif; ?>
-				<?php if (get_theme_mod('social_twitter')) : ?><li class="inline-block"><a class="fa fa-twitter" href="<?= get_theme_mod('social_twitter') ?>"></a></li><?php endif; ?>
+				<?php if (csc_get_mod('social_facebook')) : ?><li class="inline-block"><a class="fa fa-facebook" href="<?= csc_get_mod('social_facebook') ?>"></a></li><?php endif; ?>
+				<?php if (csc_get_mod('social_twitter')) : ?><li class="inline-block"><a class="fa fa-twitter" href="<?= csc_get_mod('social_twitter') ?>"></a></li><?php endif; ?>
 			</ul>
 			<p class="credits">&copy; UPB Cordillera Studies <?php echo date('Y'); ?>. All rights reserved.
 			</p>

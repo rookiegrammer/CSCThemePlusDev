@@ -5,7 +5,7 @@
 			<article class="post">
 				<header class="parallax entry-header">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<h2 class="entry-date"><span style="font-size: <?= get_theme_mod('display_post_date_scale', '1.0')?>em"><?php the_date(); ?></span></h2>
+					<h2 class="entry-date"><span style="font-size: <?= csc_get_mod('display_post_date_scale', '1.0')?>em"><?php the_date(); ?></span></h2>
 				</header>
 				<style type="text/css">
 					.post > .entry-header {

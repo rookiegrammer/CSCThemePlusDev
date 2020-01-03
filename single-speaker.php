@@ -5,8 +5,8 @@ wp_enqueue_style('speaker_css', get_template_directory_uri() . '/css/style-speak
 		<main class="main-content">
 				<style>			
 					.profiles .prf-wrap {
-						width: <?=get_theme_mod('display_speaker_thumb_size', '80')*2?>px;
-						height: <?=get_theme_mod('display_speaker_thumb_size', '80')*2?>px;
+						width: <?=csc_get_mod('display_speaker_thumb_size', '80')*2?>px;
+						height: <?=csc_get_mod('display_speaker_thumb_size', '80')*2?>px;
 						margin-bottom: 50px;
 					}
 				</style>

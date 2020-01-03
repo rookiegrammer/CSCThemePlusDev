@@ -4,7 +4,7 @@
 function wpcsc_theme_styles() {
 	wp_enqueue_style('font-awesome_css', get_template_directory_uri() . '/css/font-awesome.css');
     wp_enqueue_style('foundation_css', get_template_directory_uri() . '/css/foundation.min.css', array(), '6.3.0', 'all');
-	wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('main_css', get_template_directory_uri() . '/main.css');
 
 }
 add_action('wp_enqueue_scripts', 'wpcsc_theme_styles');

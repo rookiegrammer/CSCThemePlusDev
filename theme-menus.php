@@ -14,7 +14,7 @@ add_action( 'init', 'register_theme_menus');
 // Custom Menus
 class Menu_With_Description extends Walker_Nav_Menu {
 
-  function start_el(&$output, $item, $depth, $args) {
+  function start_el(&$output, $item, $depth = 0, $args = NULL, $id = 0) {
       global $wp_query;
 
       $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -50,7 +50,7 @@ class Menu_With_Description extends Walker_Nav_Menu {
 
 class Menu_With_Link_Classes extends Walker_Nav_Menu {
 
-    function start_el(&$output, $item, $depth, $args) {
+    function start_el(&$output, $item, $depth = 0, $args = NULL, $id = 0) {
         global $wp_query;
 
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
